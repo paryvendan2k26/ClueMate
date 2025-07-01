@@ -1,0 +1,56 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Clues</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Coding Clues</h1>
+        <p class="subtitle">Receive subtle hints for your coding challenges.</p>
+
+        <div class="input-section">
+            <textarea id="problemInput" placeholder="Paste your problem description here, or click 'Detect Problem' if on LeetCode/CodeChef..." rows="8"></textarea>
+            <button id="detectProblemBtn" class="secondary-btn detect-btn">Detect Problem</button> <!-- New button -->
+
+            <div class="control-group">
+                <div class="clue-level-selector">
+                    <label for="clueLevel">Clue Level:</label>
+                    <select id="clueLevel">
+                        <option value="high-level">High-Level Hint</option>
+                        <option value="algorithm-focus">Algorithm Focus</option>
+                        <option value="detailed-insight">Detailed Insight</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button id="getClueBtn" class="primary-btn">Get Clue</button>
+                    <button id="newPromptBtn" class="secondary-btn hidden">New Prompt</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <p>Generating optimal clue...</p>
+        </div>
+
+        <div id="clueOutput" class="clue-output hidden">
+            <div class="clue-header">
+                <h2>Clue:</h2>
+                <button id="copyClueBtn" class="copy-btn hidden" title="Copy Clue">📋</button>
+            </div>
+            <div id="clueText" class="clue-content"></div> <!-- Changed to div for innerHTML -->
+        </div>
+
+        <div id="errorMessage" class="error-message hidden">
+            <p>An error occurred. Please try again.</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
